@@ -1,17 +1,29 @@
-import logo from './logo.svg';
 import React from "react";
-import './App.css';
-import {BrowserRouter, Route} from "react-router-dom";
+import styled, {createGlobalStyle} from "styled-components";
+import {Route} from "react-router-dom";
+import { history } from "./redux/configureStore";
+import { ConnectedRouter } from "connected-react-router";
+
+import {Main, Test} from "./pages/indexPage";
+import Header from "./Header";
 
 function App() {
   return (
     <React.Fragment>
-      <BrowserRouter>
-        <Route path="/" exact components={Main}/>
-        <Route path="/test" exact components={Test}/>
-      </BrowserRouter>
+      <GlobalStyle/>
+      <Header></Header>
+      <ConnectedRouter history={history}>
+        <Route path="/" exact component={Main}/>
+        <Route path="/test" component={Test}/>
+      </ConnectedRouter>
     </React.Fragment>
   );
 }
 
 export default App;
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    font-family: "Noto Sans KR", sans-serif;
+  }
+`;
