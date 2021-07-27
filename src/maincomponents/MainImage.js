@@ -17,12 +17,15 @@ const MainImage = () => {
                 <LinkWrap>
                     <Wrap>
                         <LinkBox onClick={() => {
-                            history.push("/test/test")
+                            history.push("/test/test");
                         }}>
                             <span>오늘의 술 추천</span>
-                            <LinkImage></LinkImage>
+                            <LinkImage
+                            ></LinkImage>
                         </LinkBox>
-                        <LinkBox >
+                        <LinkBox onClick={() => {
+                            history.push("/board/category");
+                        }}>
                             <span>술 공유 게시판</span>
                             <LinkImage></LinkImage>
                         </LinkBox>

@@ -7,8 +7,11 @@ import { ConnectedRouter } from "connected-react-router";
 import {Main, Test} from "./pages/indexPage";
 import Header from "./Header";
 import SignUp from "./pages/SignUp";
-import BeerDogam from "./beerdogam/BeerDogam";
 import BeerReview from "./beerdogam/BeerReview";
+
+import Board from "./pages/Board";
+import MyPage from "./pages/MyPage";
+
 
 function App() {
   return (
@@ -19,8 +22,9 @@ function App() {
         <Route path="/" exact component={Main}/>
         <Route path="/test" component={Test}/>
         <Route path="/signup" exact component={SignUp}/>
-        <Route path="/beerdogam" exact component={BeerDogam}/>
         <Route path="/beerreview" exact component={BeerReview}/>
+        <Route path="/board" component={Board}/>
+        <Route path="/mypage" component={MyPage}/>   
       </ConnectedRouter>
     </React.Fragment>
   );
