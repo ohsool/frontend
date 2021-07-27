@@ -4,9 +4,13 @@ import styled from "styled-components";
 //document 쓰지말고 ref나 usestate쓰기
 //console찍을때 console.log("상황 정확히 명시", data)
 //import 순서 React => styled => react-redux, dispatch => component(제일 후순위)
-
+/*
 const Template = (props) => {        //props 받아오는 데이터 주석으로 적어놓기
-    const [aaaa, setAaaa] = useState();
+    const [aaaa, setAaaa] = useState({
+        user_id: "",
+        user_pwd: "",
+
+    });
     const [user_info, setUser_Info ] = useState();
     const a = useSelector((state) => state.aaa);  //useState => useSelector 순서
 
@@ -24,18 +28,20 @@ const Template = (props) => {        //props 받아오는 데이터 주석으로
 
     }    //함수들 
     
+    const {user_id, user_pwd} = user_info;
+    
     const onChange = (e) => {
-        setUser_Info([...user_info, 
-            {
-                id: e.target.value,
-                pwd: e.target.value,
-                nickname: e.target.nickname
-            }]);
+        setUser_Info({...user_info, 
+            [e.target.name]: e.target.value,
+        });
     } //input상태관리를 return 바로 위에
 
     return (
         <React.Fragment>
             <AA></AA>
+            <input name = "user_id" value={user_id} onChange={onChane}></input>
+            <input name = "user_pwd" value={user_pwd} onChange={onChane}></input>
+
         </React.Fragment>
     )
 }
@@ -51,4 +57,4 @@ export default Template;
 
 const AA = styled.div`
 
-`;
+`;*/
