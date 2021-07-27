@@ -16,12 +16,6 @@ import MyPage from "./pages/MyPage";
 function App() {
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <BrowserRouter>
-        <Route path="/board" component={Board}/>
-        <Route path="/mypage" component={MyPage}/>        
-      </BrowserRouter>
-=======
       <GlobalStyle/>
       <Header></Header>
       <ConnectedRouter history={history}>
@@ -29,8 +23,10 @@ function App() {
         <Route path="/test" component={Test}/>
         <Route path="/signup" exact component={SignUp}/>
         <Route path="/beerdogam" exact component={BeerDogam}/>
+        <Route path="/board" component={Board}/>
+        <Route path="/mypage" component={MyPage}/>   
+        
       </ConnectedRouter>
->>>>>>> 72c40f3e3d12cbde92b15b044f8c5548d7884109
     </React.Fragment>
   );
 }
