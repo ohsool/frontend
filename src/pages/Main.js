@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import MainImage from "../maincomponents/MainImage";
+import ohsoolImage from "../share/ohsoolImage.jpeg"
 
 const Main = (props) => {
     return (
@@ -27,6 +28,7 @@ const Grid = styled.div`
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: black;
+    background-image: ${ohsoolImage};
+    background-color: #FFFFFF;
     display: table;
 `;

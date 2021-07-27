@@ -26,7 +26,7 @@ export default RecommendTest;
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: black;
+    background-color: white;
     display: table;
 `;
 
@@ -37,9 +37,10 @@ const ImageGridcenter = styled.div`
 
 const QuestionWrap = styled.div`
     display: inline-block;
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: bold;
     line-height: 200px;
-    color: white;
+    color: #000000;
 `;
 
 const QuestionAnswerWrap = styled.div`
@@ -56,11 +57,13 @@ const Wrap = styled.div`
 `;
 
 const QuestionAnswer = styled.div`
+    display: inline-block;
     width: 250px;
     height: 60px;
     line-height: 60px;
-    display: inline-block;
     border-radius: 10px;
     background: #D1D1D1;
     margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 `;

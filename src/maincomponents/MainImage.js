@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { history } from "../redux/configureStore";
+import ohsoolImage from "../share/ohsoolImage.jpeg"
 
 const MainImage = () => {
     return(
@@ -9,8 +10,7 @@ const MainImage = () => {
                 <ImageGrid>
                     <ImageGridcenter>
                         <MainLogoWrap>
-                            <MainLogoImage></MainLogoImage>
-                            <MainLogo>오늘의 술</MainLogo>
+                            <MainLogo></MainLogo>
                         </MainLogoWrap>
                     </ImageGridcenter>
                 </ImageGrid>
@@ -37,7 +37,8 @@ export default MainImage;
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: black;
+    background-image: url(${ohsoolImage});
+    background-size: cover;
     display: table;
 `;
 
@@ -48,20 +49,13 @@ const ImageGridcenter = styled.div`
 `;
 
 const MainLogoWrap = styled.div`
-    background-color: black;
     display: inline-block;
     width: 200px;
     height: 200px;
 `;
-const MainLogoImage = styled.div`
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 200px;
-    background-color: white;
-`;
 
 const MainLogo = styled.div`
+    margin-top: 140px;
     font-size: 40px;
     color: white;
 `;
@@ -69,7 +63,6 @@ const MainLogo = styled.div`
 const LinkWrap = styled.div`
     position: absolute;
     width: 100%;
-    margin: 0 0 0 0;
 `;
 
 const Wrap = styled.div`
@@ -84,10 +77,13 @@ const LinkBox = styled.div`
     height: 60px;
     line-height: 60px;
     margin: 0 0 20px 0;
-    background-color: #D1D1D1;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     & > span {
-        margin-left: 10px;
+        margin-left: 20px;
+        font-weight: bold;
+        font-size: 20px;
     }
 `;
 
@@ -96,5 +92,5 @@ const LinkImage = styled.div`
     width: 35px;
     height: 35px;
     border-radius: 35px;
-    background-color: gray;
+    border: 1px solid #D1D1D1;
 `;

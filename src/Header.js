@@ -24,7 +24,6 @@ const Header = (props) => {
                     }}>오늘의 술</HeaderLogo>
                     <Login>
                         <ModalBtn onClick={openModal}>
-                            로그인
                         </ModalBtn>
                     <LoginModal
                         open={modalOpen}
@@ -52,23 +51,24 @@ const HeaderDiv = styled.div`
     width: 360px;
     display: flex;
     justify-content: space-between;
-    background: white;
+    background: #FFFFFF;
 `;
 const HeaderLogo = styled.div`
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 40px;
+    color: #333333;
+    font-weight: bold;
     cursor: pointer;
 `;
-const ModalBtn = styled.button`
-  background: none;
-  border: 0;
-  line-height: 40px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 4px;
-  width: 100px;
-  height: 28px;
+const ModalBtn = styled.div`
+    border: 1px solid #D1D1D1;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
 `;
 
 const Login = styled.div`

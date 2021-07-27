@@ -12,7 +12,7 @@ const RecommendResult = () => {
                     </ImageGridcenter>
             </ImageGrid>
             <div>
-                <ReButton>다시하기</ReButton>
+                {/* <ReButton>다시하기</ReButton> */}
             <ShareResult/>
             </div>
 
@@ -25,7 +25,7 @@ export default RecommendResult;
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: black;
+    background-color: white;
     display: table;
 `;
 
@@ -38,21 +38,21 @@ const ImageGridcenter = styled.div`
 const QuestionWrap = styled.div`
     background-color: #D1D1D1;
     display: inline-block;
-    line-height: 210px;
-    width: 210px;
-    height: 210px;
+    line-height: 155px;
+    width: 155px;
+    height: 155px;
     border-radius: 8px;
 `;
 
-const ReButton = styled.button`
-    position: absolute;
-    display: inline-block;
-    margin: -27px 0 0 -27px;
-    font-size: 12px;
-    width: 54px;
-    height: 54px;
-    border: none;
-    border-radius: 54px;
-    background-color: #D1D1D1;
-    cursor: pointer;
-`;
+// const ReButton = styled.button`
+//     position: absolute;
+//     display: inline-block;
+//     margin: -27px 0 0 -27px;
+//     font-size: 12px;
+//     width: 54px;
+//     height: 54px;
+//     border: none;
+//     border-radius: 54px;
+//     background-color: #D1D1D1;
+//     cursor: pointer;
+// `;

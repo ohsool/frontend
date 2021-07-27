@@ -64,7 +64,7 @@ const InputSignUP = styled.input`
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #D1D1D1;
+    border-bottom: 1px solid #FFD074;
     font-size: 20px;
     outline: none;
 `;
@@ -75,8 +75,8 @@ const SignUpButton = styled.button`
     float: right;
     margin-right: 30px;
     margin-top: 80px;
-    border: none;
-    background-color: black;
+    border: 1px solid #FFB521;
+    background-color: #FFFFFF;
     border-radius: 10px;
-    color: white;
+    color: #FFB521;
 `;

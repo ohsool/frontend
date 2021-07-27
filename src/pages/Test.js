@@ -27,7 +27,7 @@ export default Test;
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: black;
+    background-color: white;
     display: table;
 `;
 

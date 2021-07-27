@@ -48,8 +48,8 @@ const LoginModal = (props) => {
                         <LoginButton>로그인</LoginButton>
                     </ButtonWrap>
                     <SocialLoginWrap>
-                        <SocialLoginButton>카카오톡으로 로그인하기</SocialLoginButton>
-                        <SocialLoginButton>구글로 로그인하기</SocialLoginButton>
+                        <SocialKaKaoButton>카카오톡으로 로그인하기</SocialKaKaoButton>
+                        <SocialGoogleButton>구글로 로그인하기</SocialGoogleButton>
                     </SocialLoginWrap>
                 </ModalContainer>
                 </ModalWrap>
@@ -95,7 +95,7 @@ const ModalContainer = styled.div`
     height: 580px;  
     width: 290px;
     border-radius: 5px;
-    background: #D1D1D1;
+    background: #FFFFFF;
     text-align: center;
 `;
 
@@ -107,15 +107,16 @@ const InputBox = styled.input`
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid #FFD074;
+    outline: none;
+    color: #888888;
     background-color: transparent;
     margin-top: 10px;
     width: 250px;
     height: 30px;
     ::placeholder,
     ::-webkit-input-placeholder {
-        color: white;
+        color: #888888;
     }
 `;
 
@@ -129,15 +130,15 @@ const SignUpButton = styled.button`
     border-left: none;
     border-top: none;
     border-bottom: none;
-    border-right: 1px solid white;
-    background-color: #D1D1D1;
+    border-right: 1px solid #FFD074;
+    background-color: #FFFFFF;
     width: 125px;
     height: 36px;
     cursor: pointer;
 `;
 
 const LoginButton = styled.button`
-    background-color: #D1D1D1;
+    background-color: #FFFFFF;
     width: 125px;
     height: 36px;
     cursor: pointer;
@@ -148,12 +149,22 @@ const SocialLoginWrap = styled.div`
     margin-top: 10px;
 `;
 
-const SocialLoginButton = styled.button`
-    color: #888888;
+const SocialKaKaoButton = styled.button`
+    color: #3C1E1E;
+    margin-top: 10px;
+    background-color: #FAE100;
+    width: 250px;
+    height: 40px;
+    border-radius: 56px;
+    border: none;
+`;
+
+const SocialGoogleButton = styled.button`
+    color: #3C1E1E;
     margin-top: 10px;
     background-color: white;
     width: 250px;
     height: 40px;
     border-radius: 56px;
-    border: none;
+    border: 1px solid #3C1E1E;
 `;
