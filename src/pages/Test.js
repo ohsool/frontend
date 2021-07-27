@@ -8,7 +8,7 @@ const Test = (props) => {
     return (
         <React.Fragment>
             <Grid>
-            <ImageGrid>
+                <ImageGrid>
                     <Route
                         path="/test/test"  //path="/test/:testId"
                         component={RecommendTest}>    
@@ -17,7 +17,7 @@ const Test = (props) => {
                         path="/test/result"
                         component={RecommendResult}>
                     </Route>
-            </ImageGrid>
+                </ImageGrid>
             </Grid>
         </React.Fragment>
     )

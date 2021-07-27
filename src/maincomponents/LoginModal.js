@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
+import { history } from "../redux/configureStore";
+
 const LoginModal = (props) => {
     const { open, close } = props;
     const [user_info, setUser_Info] = useState({
@@ -11,20 +13,19 @@ const LoginModal = (props) => {
 
     const onChange = (e) => {
         setUser_Info({...user_info, [e.target.name]: e.target.value})
-        console.log(user_info);
     }
     return(
         <React.Fragment>
             {open ? 
             <Background>
                 <ModalWrap>
-                    <ModalEmptySpace>
-                    </ModalEmptySpace>
+                    {/* <ModalEmptySpace>
+                    </ModalEmptySpace> */}
                 <ModalContainer>
                     <CloseIcon onClick={close}>X</CloseIcon>
                     <InputWrap>
                         <InputBox 
-                        placeholder="아이디"
+                        placeholder="이메일"
                         onChange={onChange}
                         name="user_id"
                         value={user_id}
@@ -38,9 +39,18 @@ const LoginModal = (props) => {
                         ></InputBox>
                     </InputWrap>
                     <ButtonWrap>
-                        <SignUpButton>회원가입</SignUpButton>
+                        <SignUpButton
+                        onClick={() => {
+                            history.push("/signup")
+                            close();
+                        }}
+                        >회원가입</SignUpButton>
                         <LoginButton>로그인</LoginButton>
                     </ButtonWrap>
+                    <SocialLoginWrap>
+                        <SocialLoginButton>카카오톡으로 로그인하기</SocialLoginButton>
+                        <SocialLoginButton>구글로 로그인하기</SocialLoginButton>
+                    </SocialLoginWrap>
                 </ModalContainer>
                 </ModalWrap>
             </Background> : null}
@@ -76,17 +86,13 @@ const CloseIcon = styled.div`
 const ModalWrap = styled.div`
     position: absolute;
     margin-top: 40px;
-    width: 350px;
+    width: 640px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 `;
-const ModalEmptySpace = styled.div`
-    width: 70px;
-    height: 300px;
-`;
-
+//높이 640으로 하면 전체로 보여지게됨
 const ModalContainer = styled.div`
-    height: 330px;
+    height: 580px;  
     width: 290px;
     border-radius: 5px;
     background: #D1D1D1;
@@ -98,9 +104,19 @@ const InputWrap = styled.div`
 `;
 
 const InputBox = styled.input`
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: transparent;
     margin-top: 10px;
     width: 250px;
     height: 30px;
+    ::placeholder,
+    ::-webkit-input-placeholder {
+        color: white;
+    }
 `;
 
 const ButtonWrap = styled.div`
@@ -113,7 +129,7 @@ const SignUpButton = styled.button`
     border-left: none;
     border-top: none;
     border-bottom: none;
-    border-right: 1px solid;
+    border-right: 1px solid white;
     background-color: #D1D1D1;
     width: 125px;
     height: 36px;
@@ -125,5 +141,19 @@ const LoginButton = styled.button`
     width: 125px;
     height: 36px;
     cursor: pointer;
+    border: none;
+`;
+
+const SocialLoginWrap = styled.div`
+    margin-top: 10px;
+`;
+
+const SocialLoginButton = styled.button`
+    color: #888888;
+    margin-top: 10px;
+    background-color: white;
+    width: 250px;
+    height: 40px;
+    border-radius: 56px;
     border: none;
 `;

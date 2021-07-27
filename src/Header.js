@@ -46,6 +46,7 @@ const HeaderBox = styled.div`
     justify-content: center;
     text-align: center;
     background-color: white;
+    border-bottom: 1px solid #888888;
 `;
 const HeaderDiv = styled.div`
     width: 360px;
