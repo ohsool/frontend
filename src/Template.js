@@ -6,20 +6,12 @@ import styled from "styled-components";
 //import 순서 React => styled => react-redux, dispatch => component(제일 후순위)
 /*
 const Template = (props) => {        //props 받아오는 데이터 주석으로 적어놓기
-<<<<<<< HEAD
     const [aaaa, setAaaa] = useState({
         user_id: "",
         user_pwd: "",
 
     });
     const [user_info, setUser_Info ] = useState();
-=======
-    const [aaaa, setAaaa] = useState();
-    const [user_info, setUser_Info ] = useState({
-        user_id: "",
-        user_pwd: ""
-    });
->>>>>>> 72c40f3e3d12cbde92b15b044f8c5548d7884109
     const a = useSelector((state) => state.aaa);  //useState => useSelector 순서
 
     useEffect(() => {
@@ -41,28 +33,16 @@ const Template = (props) => {        //props 받아오는 데이터 주석으로
     const {user_id, user_pwd} = user_info;
     
     const onChange = (e) => {
-<<<<<<< HEAD
         setUser_Info({...user_info, 
             [e.target.name]: e.target.value,
         });
-=======
-        setUser_Info({...user_info,
-                [e.target.name]: e.target.value,
-            });
->>>>>>> 72c40f3e3d12cbde92b15b044f8c5548d7884109
     } //input상태관리를 return 바로 위에
 
     return (
         <React.Fragment>
             <AA></AA>
-<<<<<<< HEAD
-            <input name = "user_id" value={user_id} onChange={onChane}></input>
-            <input name = "user_pwd" value={user_pwd} onChange={onChane}></input>
-
-=======
             <input name="user_id" value={user_id} onChange={onChange}></input>
             <input name="user_pwd" value={user_pwd} onChange={onChange}></input>
->>>>>>> 72c40f3e3d12cbde92b15b044f8c5548d7884109
         </React.Fragment>
     )
 }

@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-import RecommendMapModal from "./RecommendMapModal";
+// import RecommendMapModal from "./RecommendMapModal";
+import Product from "../componentsBoard/Product";
 
 const ShareResult = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -19,8 +20,10 @@ const ShareResult = (props) => {
         <React.Fragment>
             <ShareAlcoholWrap>
                 <Wrap>
-                        <ShareAlcohol>어울리는 술1</ShareAlcohol>
-                        <ShareAlcohol>어울리는 술2</ShareAlcohol>
+                    <ProductGrid>
+                        <Product></Product>
+                        <Product></Product>
+                    </ProductGrid>
                         {/* <RecommendPlace>
                             <RecommendInnerWrap>
                                 <Text> 주변에 파는 장소</Text>
@@ -45,12 +48,20 @@ export default ShareResult;
 
 const ShareAlcoholWrap = styled.div`
     width: 100%;
-    background-color: white;
+    // background-color: white;
 `;
 const Wrap = styled.div`
     display: inline-block;
     width: 360px;
 `;
+
+const ProductGrid = styled.div`
+    display: grid;
+    width: 320px;
+    margin: 0 auto;
+    grid-template-columns: 165px 165px;
+`;
+
 const RecommendWrap = styled.div`
     margin-top: 45px;
 `;

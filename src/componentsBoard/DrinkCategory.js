@@ -9,7 +9,18 @@ import Product from './Product';
 const DrinkCategory = () => {
     const history = useHistory();
 
-    const product = [{name: '아잉거 셀러브레이터 도펠 보크', eng_name: 'Ayinger Celebrator Doppelbock',hash_tag: '달달'}, {name: '맥주2' , eng_name: 'endName',hash_tag: '달달'}, {name: '맥주3', eng_name: 'endName',hash_tag: '달달'}]
+    const product = [{
+        name: '아잉거 셀러브레이터 도펠 보크', 
+        eng_name: 'Ayinger Celebrator Doppelbock',
+        hash_tag: '달달'}
+    , {
+        name: '맥주2' , 
+        eng_name: 'endName',
+        hash_tag: '달달'}, 
+    {
+        name: '맥주3', 
+        eng_name: 'endName',
+        hash_tag: '달달'}];
 
     return (
         <>

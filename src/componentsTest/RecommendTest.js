@@ -26,7 +26,6 @@ export default RecommendTest;
 const ImageGrid = styled.div`
     width: 100%;
     height: 300px;
-    background-color: white;
     display: table;
 `;
 

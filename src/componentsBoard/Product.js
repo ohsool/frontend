@@ -32,8 +32,10 @@ const Grid = styled.div`
 const Container  = styled.button`
     width: 155px;
     height: 155px;
-    border: 1px solid #ebebeb;
-    border-radius: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
     }
 `
 
