@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import {RecommendResult, RecommendTest } from "../componentsTest/TestIndex";
 
@@ -8,16 +8,16 @@ const Test = (props) => {
     return (
         <React.Fragment>
             <Grid>
-            <ImageGrid>
+                <ImageGrid>
                     <Route
                         path="/test/test"  //path="/test/:testId"
                         component={RecommendTest}>    
                     </Route>
                     <Route
-                        path="/test/result" 
+                        path="/test/result"
                         component={RecommendResult}>
                     </Route>
-            </ImageGrid>
+                </ImageGrid>
             </Grid>
         </React.Fragment>
     )
@@ -26,8 +26,7 @@ const Test = (props) => {
 export default Test;
 const ImageGrid = styled.div`
     width: 100%;
-    height: 584px;
-    background-color: gray;
+    height: 300px;
     display: table;
 `;
 
