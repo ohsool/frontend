@@ -12,7 +12,7 @@ const Test = (props) => {
                 <ImageGrid>
                     <Route
                         path="/test/test"  //path="/test/:testId"
-                        component={RecommendTest}>    
+                        component={RecommendTest}>
                     </Route>
                     <Route
                         path="/test/result"
