@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import MyPageSuggestModal from "../maincomponents/MyPageSuggestModal";
 import arrow from "../share/arrow.png";
 
-const Mypage = (props) => {
+const MyPage = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [modal_info, setModal_Info] = useState({
         suggestTitle: "",
@@ -78,7 +78,7 @@ const Mypage = (props) => {
 
 }
 
-export default Mypage;
+export default MyPage;
 
 const Container = styled.div`
     width: 360px;

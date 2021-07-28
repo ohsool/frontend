@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+
 import { Route } from "react-router-dom";
 
-import {RecommendResult, RecommendTest } from "../componentsTest/TestIndex";
+import { RecommendResult, RecommendTest } from "../componentsTest/TestIndex";
 
 const Test = (props) => {
     return (
