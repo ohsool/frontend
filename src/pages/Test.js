@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Route} from "react-router-dom";
 
-import { Route } from "react-router-dom";
-
-import { RecommendResult, RecommendTest } from "../componentsTest/TestIndex";
+import {RecommendResult, RecommendTest } from "../componentsTest/TestIndex";
 
 const Test = (props) => {
     return (
@@ -12,7 +11,7 @@ const Test = (props) => {
                 <ImageGrid>
                     <Route
                         path="/test/test"  //path="/test/:testId"
-                        component={RecommendTest}>
+                        component={RecommendTest}>    
                     </Route>
                     <Route
                         path="/test/result"
