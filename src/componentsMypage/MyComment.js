@@ -9,23 +9,19 @@ const MyComment = () =>{
     return(
         <>
             <TitleContainer>
-                내가 쓴 댓글
                 <span>내가 쓴 댓글</span>
             </TitleContainer>
             <HR/>
 
-
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-
+            <Grid>
+                <Comment/>
+                <Comment/>
+                <Comment/>
+                <Comment/>
+            </Grid>
 
         </>
-
     )
-
-
 
 }
 
@@ -43,6 +39,14 @@ const TitleContainer = styled.div`
     }
 
 `;
+
+const Grid = styled.div`
+    width: 320px;
+    margin: 0 auto;
+    
+    align-items: center;
+    justify-content: space-between;
+`
 
 const HR = styled.hr`
     ${props => (props.border ? `border: ${props.border} soild #212121;` : "border: 2px soild #212121;")};

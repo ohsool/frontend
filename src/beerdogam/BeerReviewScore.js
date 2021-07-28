@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import TasteButton from "./TasteButton";
+import StarButton from "./StarButton";
 const BeerReviewScore = (props) => {
-    const TasteData = ["쓴맛", "단맛", "고소한맛", "청량감", "향", "도수"];
+    const TasteData = ["쓴맛", "단맛", "고소한맛", "청량감", "향"];
     return(
         <React.Fragment>
             <TasteLevelWrap>
@@ -11,15 +12,18 @@ const BeerReviewScore = (props) => {
                     {TasteData.map((taste) => 
                         (<span>{taste}</span>)
                     )}
+                    <span>별점</span>
                 </TasteFlavorWrap>
                 <TasteScoreWrap>
                     {TasteData.map((taste) => (
                         <TasteButton/>
                     ))}
+                    <StarButton/>
                     <TasteScore>
                     </TasteScore>
                 </TasteScoreWrap>
             </TasteLevelWrap>
+            <hr/>
             <ReviewButton>
                 도감 작성하기
             </ReviewButton>
@@ -56,11 +60,13 @@ const TasteScoreWrap = styled.div`
     margin: 35px 0 0 6px;
 `;
 
+
 const TasteScore = styled.div`
     width: 190px;
     height: 30px;
     margin-bottom: 13px;
 `;
+
 
 const ReviewButton = styled.button`
     width: 111px;

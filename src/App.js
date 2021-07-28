@@ -8,8 +8,6 @@ import {Main, Test, Board, MyPage, SignUp} from "./Pages/indexPage";
 import Header from "./Header";
 import BeerReview from "./beerdogam/BeerReview";
 
-
-
 function App() {
   return (
     <React.Fragment>
