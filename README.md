@@ -11,15 +11,15 @@
   - 문지혜
   - 이근호
 
-# 1. 프론트 사용기술
+# 2. 프론트 사용기술
 - 미들웨어: redux-thunk, history
 - 배포(예정): AWS S3
 - 통신(서버간): axios, socket(예정)
 - 라이브러리: redux-toolkit, react-motion, react-slick, recharts
 - 스타일: styled-components
 
-# 1. DB Schema
+# 3. DB Schema
 
-# 1. 기능
+# 4. 기능
 
-# 1. 트러블 슈팅 
+# 5. 트러블 슈팅 
