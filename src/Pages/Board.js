@@ -32,6 +32,4 @@ const Container = styled.div`
     width: 360px;
     min-height: 640px;
     margin: 0 auto;
-    // padding: 0 10px;
-    // border: 2px solid #212121;
 `;

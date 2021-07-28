@@ -27,6 +27,7 @@ const SignUp = (props) => {
     }
     return(
         <React.Fragment>
+            <SignUpWrap>
             <InputWrap>
                 <InputSignUP
                     onChange={onChange}
@@ -57,16 +58,23 @@ const SignUp = (props) => {
             </InputWrap>
             <SignUpButton 
                 onClick={submitSignUp}>회원가입 완료</SignUpButton>
+            </SignUpWrap>
         </React.Fragment>
     )
 } 
 
 export default SignUp;
 
+const SignUpWrap = styled.div`
+    width: 360px;
+    height: 640px;
+    background-color: #FFFFFF;
+`;
+
 const InputWrap = styled.div`
     text-align: center;
     width: 360px;
-    margin-top: 40px;
+    padding-top: 40px;
 `;
 
 const InputSignUP = styled.input`

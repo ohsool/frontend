@@ -1,44 +1,74 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
+
+import MyPageSuggestModal from "../maincomponents/MyPageSuggestModal";
+import arrow from "../share/arrow.png";
+
 const Mypage = (props) => {
-    const [toggle, setToggle] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modal_info, setModal_Info] = useState({
+        suggestTitle: "",
+        titlePlaceholder: "",
+        commentPlaceholder: "",
+    });
+    const openModal = () => {
+        setModalOpen(true);
+        console.log(modal_info);
+      };
+    const closeModal = () => {
+        setModalOpen(false);
+        setModal_Info({
+            suggestTitle: "",
+            titlePlaceholder: "",
+            commentPlaceholder: "",
+        })
+    };
 
     return (
         <>
         <Container>
             <TitleContainer>
-                마이페이지
+                <span>마이페이지</span>
             </TitleContainer>
-            <HR/>
-            
-            <Search onClick={() => {
-                    toggle ? setToggle(false) : setToggle(true);
-                }}>
-                    내가 쓴 댓글 확인하기
-                    {/*<img src={search} alt="search" />*/}
-            </Search>
-                
-
-            <SearchContainer className={toggle ? "on" : "off"}>
-                <Grid>
-                    <p>
-                        댓글 목록
-                        .
-                        .
-                        .
-                    </p>
-                </Grid>
-            </SearchContainer>                           
-            <hr/>
-
-            <Search onClick={() => {
-                    toggle ? setToggle(false) : setToggle(true);
-                }}>
-                    내가 쓴 댓글 확인하기
-                    {/*<img src={search} alt="search" />*/}
-            </Search>
-                
-
+            <PageMoveWrap>
+                <MoveBoxWrap>
+                    <span>내가 쓴 댓글 확인하기</span>
+                    <ArrowImage src={arrow}></ArrowImage>
+                </MoveBoxWrap>
+                <MoveBoxWrap>
+                    <span>내가 태그된 댓글 확인하기</span>
+                    <ArrowImage src={arrow}></ArrowImage>
+                </MoveBoxWrap>
+                <MoveBoxWrap
+                    onClick={() => {
+                        setModal_Info({
+                            suggestTitle: "맥주 건의하기",
+                            titlePlaceholder: "맥주 이름을 입력해주세요",
+                            commentPlaceholder: "맥주의 특징이나 추천하는 이유를 입력해주세요!",
+                        })
+                        openModal();
+                    }}>
+                    <span>맥주 건의하기</span>
+                    <ArrowImage src={arrow}></ArrowImage>
+                </MoveBoxWrap>
+                <MoveBoxWrap
+                    onClick={() => {
+                        setModal_Info({
+                            suggestTitle: "관리자에게 건의하기",
+                            titlePlaceholder: "제목을 입력하세요",
+                            commentPlaceholder: "불편한 사항이나 건의할 내용을 입력해주세요!",
+                        })
+                        openModal();
+                    }}>
+                    <span>관리자에게 건의하기</span>
+                    <ArrowImage src={arrow}></ArrowImage>
+                </MoveBoxWrap>
+                <MyPageSuggestModal
+                        suggestInfo={modal_info}
+                        open={modalOpen}
+                        close={closeModal}
+                ></MyPageSuggestModal>
+            </PageMoveWrap>
         </Container>
 
         
@@ -51,70 +81,43 @@ const Mypage = (props) => {
 export default Mypage;
 
 const Container = styled.div`
-    display:block;
     width: 360px;
-    height: 640px;
-    margin: 0 auto;
-    padding: 0 10px;
-    border: 2px solid #212121;
 `;
 
 const TitleContainer = styled.div`
     width: 360px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid #333333;
+`;
+
+const PageMoveWrap = styled.div`
+    width: 360px;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    margin: 13px 0;
+    flex-direction: column;
 `;
 
-const Search = styled.div`
-    width: 360px;
-    button{
-        background: none;
-        cursor: pointer;
-    }
-    img {
-        width: 50px;
-        height: 50px;
-    }
-`;
-
-
-
-const Grid = styled.div`
-    padding: 2px 0;
-    width: 100%;
-    p {
-        background: #efefef;
-        border: none;
-        padding: 7px 30px;
-        width: 250px;
-        border-radius: 20px;
-        font-size: 12px;
-
-    }
-
-`
-const HR = styled.hr`
-    border: 2px soild;
-    width: 350px;
-    background-color: #212121;
-`
-
-const SearchButton = styled.button`
-    background: none;
-    cursor: pointer;
-    img {
-        width: 50px;
-        height: 50px;
+const MoveBoxWrap = styled.div`
+    display: inline-block;
+    margin: 0 auto;
+    width: 320px;
+    height: 50px;
+    border-bottom: 1px solid #888888;
+    & > span{
+        line-height: 50px;
+        margin-left: 5px;
+        font-size: 16px;
+        font-weight: bold;
     }
 `;
 
-const SearchContainer = styled.div`
-    background: #fff;
-    width: 360px;
-    position: absolute;
-    z-index: 10;
-    &.off {
-        display: none;
-    }
+const ArrowImage = styled.img`
+    float: right;
+    margin: 13px;
+    width: 24px;
+    height: 24px;
 `;

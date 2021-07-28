@@ -16,20 +16,21 @@ export default SearchedPlace;
 
 const PlaceInfoWrap = styled.div`
     display: flex;
-    width: 240px;
-    height: 60px;
-    margin: 25px 0 0 25px;
+    width: 735px;
+    height: 176px;
+    margin: 37px 0 0 44px;
 `;
 
 const Place = styled.div`
-    width: 65px;
-    height: 60px;
+    width: 187px;
+    height: 176px;
     display: inline-block;
     background-color: #D1D1D1;
+    float: left;
 `;
 
 const PlaceInfo = styled.div`
-    margin-left: 20px;
-    line-height: 60px;
-    font-size: 20px;
+    margin-left: 37px;
+    line-height: 176px;
+    font-size: 30px;
 `;

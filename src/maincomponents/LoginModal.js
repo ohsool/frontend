@@ -1,60 +1,73 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
+import "./modal.css";
 import { history } from "../redux/configureStore";
+import { logIn } from "../redux/async/user";
 
 const LoginModal = (props) => {
+    const dispatch = useDispatch();
     const { open, close } = props;
     const [user_info, setUser_Info] = useState({
         user_id: "",
         user_pwd: ""
     });
-    const {user_id, user_pwd} = user_info;
+    const { user_id, user_pwd } = user_info;
 
     const onChange = (e) => {
-        setUser_Info({...user_info, [e.target.name]: e.target.value})
+        setUser_Info({ ...user_info, [e.target.name]: e.target.value })
     }
-    return(
-        <React.Fragment>
-            {open ? 
-            <Background>
-                <ModalWrap>
-                    {/* <ModalEmptySpace>
-                    </ModalEmptySpace> */}
-                <ModalContainer>
-                    <CloseIcon onClick={close}>X</CloseIcon>
-                    <InputWrap>
-                        <InputBox 
-                        placeholder="이메일"
-                        onChange={onChange}
-                        name="user_id"
-                        value={user_id}
-                        ></InputBox>
-                        <InputBox 
-                        type="password"
-                        placeholder="비밀번호"
-                        onChange={onChange}
-                        name="user_pwd"
-                        value={user_pwd}
-                        ></InputBox>
-                    </InputWrap>
-                    <ButtonWrap>
-                        <SignUpButton
-                        onClick={() => {
-                            history.push("/signup")
-                            close();
-                        }}
-                        >회원가입</SignUpButton>
-                        <LoginButton>로그인</LoginButton>
-                    </ButtonWrap>
-                    <SocialLoginWrap>
-                        <SocialKaKaoButton>카카오톡으로 로그인하기</SocialKaKaoButton>
-                        <SocialGoogleButton>구글로 로그인하기</SocialGoogleButton>
-                    </SocialLoginWrap>
-                </ModalContainer>
-                </ModalWrap>
-            </Background> : null}
+    const onSubmit = () => {
+        dispatch(logIn(user_info))
+        setUser_Info({
+            user_id: "",
+            user_pwd: ""
+        });
+    }
+    return (
 
+        <React.Fragment>
+            {open ?
+                <Background>
+                    <ModalWrap>
+                        <ModalEmptySpace>
+                        </ModalEmptySpace>
+                        <ModalContainer>
+                            <CloseIcon onClick={close}>X</CloseIcon>
+                            <InputWrap>
+                                <InputBox
+                                    placeholder="이메일"
+                                    onChange={onChange}
+                                    name="user_id"
+                                    value={user_id}
+                                ></InputBox>
+                                <InputBox
+                                    type="password"
+                                    placeholder="비밀번호"
+                                    onChange={onChange}
+                                    name="user_pwd"
+                                    value={user_pwd}
+                                ></InputBox>
+                            </InputWrap>
+                            <ButtonWrap>
+                                <SignUpButton
+                                    onClick={() => {
+                                        history.push("/signup")
+                                        close();
+                                    }}
+                                >회원가입</SignUpButton>
+                                <LoginButton
+                                    onClick={onSubmit}
+                                >로그인</LoginButton>
+                            </ButtonWrap>
+                            <SocialLoginWrap>
+                                <SocialKaKaoButton>카카오톡으로 로그인하기</SocialKaKaoButton>
+                                <SocialGoogleButton>구글로 로그인하기</SocialGoogleButton>
+                            </SocialLoginWrap>
+                        </ModalContainer>
+                    </ModalWrap>
+                </Background> : null}
         </React.Fragment>
     )
 }
@@ -62,12 +75,13 @@ const LoginModal = (props) => {
 export default LoginModal;
 
 const Background = styled.div`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background-color: rgba(0,0,0,0.50);
+    animation: fadeIn .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     z-index: 10;
     display: flex;
     justify-content: center;
@@ -86,18 +100,22 @@ const CloseIcon = styled.div`
 
 const ModalWrap = styled.div`
     position: absolute;
+    animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     margin-top: 40px;
     width: 640px;
     display: flex;
     justify-content: center;
 `;
 //높이 640으로 하면 전체로 보여지게됨
+const ModalEmptySpace = styled.div`
+    height: 580px;
+    width: 70px;
+`;
 const ModalContainer = styled.div`
     height: 580px;  
     width: 290px;
     border-radius: 10px;
     background: #FFFFFF;
-    text-align: center;
 `;
 
 const InputWrap = styled.div`

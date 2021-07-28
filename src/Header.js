@@ -50,7 +50,7 @@ const HeaderDiv = styled.div`
     width: 360px;
     display: flex;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    background-color: #F2F3F7;
 `;
 const HeaderLogo = styled.div`
     margin-left: 20px;
