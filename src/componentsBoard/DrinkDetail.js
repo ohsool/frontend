@@ -1,8 +1,9 @@
-import React ,{useState} from 'react'
-import styled from 'styled-components';
-import DetailTop from './DetailTop';
+import React ,{useState} from "react"
+import styled from "styled-components";
+import DetailTop from "./DetailTop";
 import Slider from "react-slick";
 import BeerDogam from "./BeerDogam";
+import Comment from "./Comment"
 
 const DrinkDetail = () => {
 
@@ -18,6 +19,8 @@ const DrinkDetail = () => {
         arrows:false,
     };
 
+    //댓글은 무한스크롤형태로 4개씩 보여줄 예정
+
     return (
         <>
         <DetailTop/>
@@ -25,7 +28,10 @@ const DrinkDetail = () => {
         <div>
             <Container>
                             
-                <ReviewList/>
+                <Comment/>
+                <Comment/>
+                <Comment/>
+                <Comment/>
 
                 <ReviewWrite>
                     <input type="text" placeholder="리뷰 작성하기"

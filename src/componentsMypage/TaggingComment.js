@@ -1,0 +1,15 @@
+import React from "react";
+import styled from "styled-components";
+
+const TaggingComment = () =>{
+
+    return(
+        <>
+        </>
+    )
+
+
+}
+
+export default TaggingComment;
+

@@ -20,7 +20,7 @@ function App() {
         <Route path="/test" component={Test}/>
         <Route path="/signup" exact component={SignUp}/>
         <Route path="/beerreview" exact component={BeerReview}/>
-        <Route path="/board/category" component={Board}/>
+        <Route path="/board" component={Board}/>
         <Route path="/mypage" component={MyPage}/>   
       </ConnectedRouter>
     </React.Fragment>
