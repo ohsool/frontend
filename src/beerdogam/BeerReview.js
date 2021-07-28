@@ -42,6 +42,5 @@ const InputReview = styled.textarea`
 const ScoreWrap = styled.div`
     width: 360px;
     height: 305px;
-    border: 1px solid;
     box-sizing: border-box;
 `;

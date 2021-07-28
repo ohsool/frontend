@@ -1,7 +1,11 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
+import {useDispatch} from "react-redux";
+import {signUp} from "../redux/async/user";
+
 const SignUp = (props) => {
+    const dispatch = useDispatch();
     const [signup_info, setSignUp_Info] = useState({
         user_id: "",
         user_nickname: "",
@@ -13,7 +17,13 @@ const SignUp = (props) => {
 
     const onChange = (e) => {
         setSignUp_Info({...signup_info, [e.target.name]: e.target.value});
-        console.log(signup_info);
+    }
+    const submitSignUp = () => {
+        if(user_pwd !== user_pwd_check){
+            window.alert("비밀번호 및 비밀번호확인이 다릅니다!");
+            return;
+        }
+        dispatch(signUp(signup_info));
     }
     return(
         <React.Fragment>
@@ -45,7 +55,8 @@ const SignUp = (props) => {
                     placeholder="비밀번호를 한번 더 입력해주세요"
                 ></InputSignUP>
             </InputWrap>
-            <SignUpButton>회원가입 완료</SignUpButton>
+            <SignUpButton 
+                onClick={submitSignUp}>회원가입 완료</SignUpButton>
         </React.Fragment>
     )
 } 
@@ -61,11 +72,12 @@ const InputWrap = styled.div`
 const InputSignUP = styled.input`
     width: 320px;
     height: 50px;
+    background-color: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 1px solid #FFD074;
-    font-size: 20px;
+    font-size: 15px;
     outline: none;
 `;
 
@@ -73,10 +85,11 @@ const SignUpButton = styled.button`
     width: 111px;
     height: 40px;
     float: right;
+    font-weight: bold;
     margin-right: 30px;
     margin-top: 80px;
-    border: 1px solid #FFB521;
-    background-color: #FFFFFF;
+    border: 2px solid #FFB521;
+    background-color: transparent;
     border-radius: 10px;
     color: #FFB521;
 `;

@@ -79,6 +79,7 @@ const CloseIcon = styled.div`
     line-height: 30px;
     font-weight: 500;
     font-size: 20px;
+    border-radius: 10px;
     height: 30px;
     background-color: white;
 `;
@@ -94,7 +95,7 @@ const ModalWrap = styled.div`
 const ModalContainer = styled.div`
     height: 580px;  
     width: 290px;
-    border-radius: 5px;
+    border-radius: 10px;
     background: #FFFFFF;
     text-align: center;
 `;

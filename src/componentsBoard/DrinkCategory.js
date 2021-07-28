@@ -27,7 +27,7 @@ const DrinkCategory = () => {
             <BoardTop/>
             <Slider
                 dots={true}
-                show={3}
+                show={3.2}
                 scroll={3}
                 autoplay={false}
                 autoplaySpeed={100000}

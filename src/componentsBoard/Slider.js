@@ -81,4 +81,6 @@ const Image = styled.img`
     margin: auto;
     width: 100px;
     height: 100px;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 `;

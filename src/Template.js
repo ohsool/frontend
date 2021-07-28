@@ -4,7 +4,6 @@ import styled from "styled-components";
 //document 쓰지말고 ref나 usestate쓰기
 //console찍을때 console.log("상황 정확히 명시", data)
 //import 순서 React => styled => react-redux, dispatch => component(제일 후순위)
-/*
 const Template = (props) => {        //props 받아오는 데이터 주석으로 적어놓기
     const [aaaa, setAaaa] = useState({
         user_id: "",
@@ -58,4 +57,4 @@ export default Template;
 
 const AA = styled.div`
 
-`;*/
+`;

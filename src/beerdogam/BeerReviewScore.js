@@ -1,21 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
+import TasteButton from "./TasteButton";
 const BeerReviewScore = (props) => {
+    const TasteData = ["쓴맛", "단맛", "고소한맛", "청량감", "향", "도수"];
     return(
         <React.Fragment>
             <TasteLevelWrap>
                 <TasteFlavorWrap>
-                    <span>쓴맛</span>
-                    <span>단맛</span>
+                    {TasteData.map((taste) => 
+                        (<span>{taste}</span>)
+                    )}
                 </TasteFlavorWrap>
                 <TasteScoreWrap>
+                    {TasteData.map((taste) => (
+                        <TasteButton/>
+                    ))}
                     <TasteScore>
-                        <TasteButton>1</TasteButton>
-                        <TasteButton>2</TasteButton>
-                        <TasteButton>3</TasteButton>
-                        <TasteButton>4</TasteButton>
-                        <TasteButton>5</TasteButton>
                     </TasteScore>
                 </TasteScoreWrap>
             </TasteLevelWrap>
@@ -37,7 +38,6 @@ const TasteLevelWrap = styled.div`
 const TasteFlavorWrap = styled.div`
     margin: 35px;
     display: inline-block;
-    border: 1px solid;
     width: 59px;
     height: 238px;
     & > span {
@@ -50,31 +50,22 @@ const TasteFlavorWrap = styled.div`
 `;
 
 const TasteScoreWrap = styled.div`
-    width: 190px;
+    width: 200px;
     height: 240px;
     display: inline-block;
-    border: 1px solid;
     margin: 35px 0 0 6px;
 `;
 
 const TasteScore = styled.div`
-    width: 200px;
+    width: 190px;
     height: 30px;
     margin-bottom: 13px;
-`;
-
-const TasteButton = styled.button`
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 30px;
-    background-color: #C4C4C4;
 `;
 
 const ReviewButton = styled.button`
     width: 111px;
     height: 40px;
+    margin-right: 20px;
     border: none;
     background-color: black;
     border-radius: 10px;

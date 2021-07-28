@@ -44,12 +44,13 @@ const HeaderBox = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
-    border-bottom: 1px solid #888888;
+    border-bottom: 1px solid #C4C4C4;
 `;
 const HeaderDiv = styled.div`
     width: 360px;
     display: flex;
     justify-content: space-between;
+    background-color: #FFFFFF;
 `;
 const HeaderLogo = styled.div`
     margin-left: 20px;
