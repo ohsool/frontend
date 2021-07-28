@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "./suggestModal.css";
 
 const MyPageSuggest = (props) => {
     const { open, close, suggestInfo } = props;
@@ -51,6 +50,16 @@ const ModalWrap = styled.div`
     height: 420px;
     display: flex;
     flex-direction: column;
+    @keyframes scaleUp {
+        0% {
+            transform: scale(.8) translateY(1000px);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    }
 `;
 
 const SuggestTitle = styled.div`

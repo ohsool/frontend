@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 
-import "./modal.css";
 import { history } from "../redux/configureStore";
 import { logIn } from "../redux/async/user";
 
@@ -99,6 +98,16 @@ const CloseIcon = styled.div`
 `;
 
 const ModalWrap = styled.div`
+    @keyframes scaleUp {
+        0% {
+            transform: scale(.5) translateX(1000px);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1) translateX(0);
+            opacity: 1;
+        }
+    }
     position: absolute;
     animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     margin-top: 40px;
